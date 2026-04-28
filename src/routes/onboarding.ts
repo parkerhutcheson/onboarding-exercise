@@ -7,8 +7,7 @@ onboardingRouter.post("/", async (req: Request, res: Response) => {
   const { firstName, lastName, email } = req.body;
 
   if (!firstName || !lastName || !email) {
-    res.status(400).json({ error: "firstName, lastName, and email are required." });
-    return;
+   return res.status(400).json({ error: "firstName, lastName, and email are required." });
   }
 
   console.info("Onboarding request received: ", { firstName, lastName, email });
